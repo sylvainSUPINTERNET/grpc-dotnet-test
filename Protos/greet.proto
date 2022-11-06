@@ -3,6 +3,10 @@ option csharp_namespace = "GrpcGreeter";
 
 package greet;
 
+// can't use google empty etc since it's not working when compiling for browser side ...
+// import "google/protobuf/empty.proto";
+// import "google/protobuf/timestamp.proto";
+
 message Greeting{
    string first_name = 1;
    string last_name = 2;
@@ -13,38 +17,15 @@ message GreetRequest{
 message GreetResponse{
    string result = 1;
 }
-service Greeter{
-    rpc Greet(GreetRequest) returns (GreetResponse){};
+
+message Empty {}
+
+message GreetResponseStream {
+   string message = 1;
 }
 
 
-// syntax = "proto3";
-
-// import "google/protobuf/empty.proto";
-// import "google/protobuf/timestamp.proto";
-
-// option csharp_namespace = "GrpcGreeter";
-
-// package greet;
-
-// // The greeting service definition.
-// service Greeter {
-//   // Sends a greeting
-//   rpc SayHello (HelloRequest) returns (HelloReply);
-//   rpc SayHelloStream (google.protobuf.Empty) returns (stream HelloReplyStream);
-// }
-
-// // The request message containing the user's name.
-// message HelloRequest {
-//   string name = 1;
-// }
-
-// // The response message containing the greetings.
-// message HelloReply {
-//   string message = 1;
-// }
-
-// message HelloReplyStream {
-//   string message = 1;
-//   google.protobuf.Timestamp timestamp = 2;
-// }
+service Greeter{
+    rpc Greet(GreetRequest) returns (GreetResponse){};
+    rpc GreetStream (Empty) returns (stream GreetResponseStream);
+}

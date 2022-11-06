@@ -23,24 +23,25 @@ public class GreeterService : Greeter.GreeterBase
         });
     }
 
+    public override async Task GreetStream(Empty _, IServerStreamWriter<GreetResponseStream> responseStream, ServerCallContext context)
+    {
+        _logger.LogInformation("GreetStreal method called");
 
-    // public override async Task SayHelloStream(Empty _, IServerStreamWriter<HelloReplyStream> responseStream, ServerCallContext context)
-    // {
 
-    //     await responseStream.WriteAsync(new HelloReplyStream
-    //     {
-    //         Message = "Hello from stream1",
-    //         Timestamp = Timestamp.FromDateTime(DateTime.UtcNow)
-    //     });
+        await responseStream.WriteAsync(new GreetResponseStream
+        {
+            Message = "Hello"
+        });
 
-    //     await Task.Delay(6000);
+        await Task.Delay(6000);
 
-    //     await responseStream.WriteAsync(new HelloReplyStream
-    //     {
-    //         Message = "Hello from stream2",
-    //         Timestamp = Timestamp.FromDateTime(DateTime.UtcNow)
-    //     });
+        await responseStream.WriteAsync(new GreetResponseStream
+        {
+            Message = "Hello2"
+        });
 
-    //     return;
-    // }
+        return;
+    }
+
+
 }

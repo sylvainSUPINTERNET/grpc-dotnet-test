@@ -24,39 +24,37 @@ namespace GrpcGreeter {
     static GreetReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0Ghtnb29nbGUvcHJvdG9idWYv",
-            "ZW1wdHkucHJvdG8aH2dvb2dsZS9wcm90b2J1Zi90aW1lc3RhbXAucHJvdG8i",
-            "HAoMSGVsbG9SZXF1ZXN0EgwKBG5hbWUYASABKAkiHQoKSGVsbG9SZXBseRIP",
-            "CgdtZXNzYWdlGAEgASgJIlIKEEhlbGxvUmVwbHlTdHJlYW0SDwoHbWVzc2Fn",
-            "ZRgBIAEoCRItCgl0aW1lc3RhbXAYAiABKAsyGi5nb29nbGUucHJvdG9idWYu",
-            "VGltZXN0YW1wMoIBCgdHcmVldGVyEjIKCFNheUhlbGxvEhMuZ3JlZXQuSGVs",
-            "bG9SZXF1ZXN0GhEuZ3JlZXQuSGVsbG9SZXBseRJDCg5TYXlIZWxsb1N0cmVh",
-            "bRIWLmdvb2dsZS5wcm90b2J1Zi5FbXB0eRoXLmdyZWV0LkhlbGxvUmVwbHlT",
-            "dHJlYW0wAUIOqgILR3JwY0dyZWV0ZXJiBnByb3RvMw=="));
+            "ChJQcm90b3MvZ3JlZXQucHJvdG8SBWdyZWV0IjEKCEdyZWV0aW5nEhIKCmZp",
+            "cnN0X25hbWUYASABKAkSEQoJbGFzdF9uYW1lGAIgASgJIjEKDEdyZWV0UmVx",
+            "dWVzdBIhCghncmVldGluZxgBIAEoCzIPLmdyZWV0LkdyZWV0aW5nIh8KDUdy",
+            "ZWV0UmVzcG9uc2USDgoGcmVzdWx0GAEgASgJIgcKBUVtcHR5IiYKE0dyZWV0",
+            "UmVzcG9uc2VTdHJlYW0SDwoHbWVzc2FnZRgBIAEoCTJ6CgdHcmVldGVyEjQK",
+            "BUdyZWV0EhMuZ3JlZXQuR3JlZXRSZXF1ZXN0GhQuZ3JlZXQuR3JlZXRSZXNw",
+            "b25zZSIAEjkKC0dyZWV0U3RyZWFtEgwuZ3JlZXQuRW1wdHkaGi5ncmVldC5H",
+            "cmVldFJlc3BvbnNlU3RyZWFtMAFCDqoCC0dycGNHcmVldGVyYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
-          new pbr::FileDescriptor[] { global::Google.Protobuf.WellKnownTypes.EmptyReflection.Descriptor, global::Google.Protobuf.WellKnownTypes.TimestampReflection.Descriptor, },
+          new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.HelloRequest), global::GrpcGreeter.HelloRequest.Parser, new[]{ "Name" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.HelloReply), global::GrpcGreeter.HelloReply.Parser, new[]{ "Message" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.HelloReplyStream), global::GrpcGreeter.HelloReplyStream.Parser, new[]{ "Message", "Timestamp" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.Greeting), global::GrpcGreeter.Greeting.Parser, new[]{ "FirstName", "LastName" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.GreetRequest), global::GrpcGreeter.GreetRequest.Parser, new[]{ "Greeting" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.GreetResponse), global::GrpcGreeter.GreetResponse.Parser, new[]{ "Result" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.Empty), global::GrpcGreeter.Empty.Parser, null, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::GrpcGreeter.GreetResponseStream), global::GrpcGreeter.GreetResponseStream.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
     #endregion
 
   }
   #region Messages
-  /// <summary>
-  /// The request message containing the user's name.
-  /// </summary>
-  public sealed partial class HelloRequest : pb::IMessage<HelloRequest>
+  public sealed partial class Greeting : pb::IMessage<Greeting>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<HelloRequest> _parser = new pb::MessageParser<HelloRequest>(() => new HelloRequest());
+    private static readonly pb::MessageParser<Greeting> _parser = new pb::MessageParser<Greeting>(() => new Greeting());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<HelloRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<Greeting> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -69,55 +67,69 @@ namespace GrpcGreeter {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloRequest() {
+    public Greeting() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloRequest(HelloRequest other) : this() {
-      name_ = other.name_;
+    public Greeting(Greeting other) : this() {
+      firstName_ = other.firstName_;
+      lastName_ = other.lastName_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloRequest Clone() {
-      return new HelloRequest(this);
+    public Greeting Clone() {
+      return new Greeting(this);
     }
 
-    /// <summary>Field number for the "name" field.</summary>
-    public const int NameFieldNumber = 1;
-    private string name_ = "";
+    /// <summary>Field number for the "first_name" field.</summary>
+    public const int FirstNameFieldNumber = 1;
+    private string firstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Name {
-      get { return name_; }
+    public string FirstName {
+      get { return firstName_; }
       set {
-        name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        firstName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "last_name" field.</summary>
+    public const int LastNameFieldNumber = 2;
+    private string lastName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string LastName {
+      get { return lastName_; }
+      set {
+        lastName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as HelloRequest);
+      return Equals(other as Greeting);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(HelloRequest other) {
+    public bool Equals(Greeting other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Name != other.Name) return false;
+      if (FirstName != other.FirstName) return false;
+      if (LastName != other.LastName) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Name.Length != 0) hash ^= Name.GetHashCode();
+      if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
+      if (LastName.Length != 0) hash ^= LastName.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -134,9 +146,13 @@ namespace GrpcGreeter {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Name.Length != 0) {
+      if (FirstName.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteString(FirstName);
+      }
+      if (LastName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(LastName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -147,9 +163,13 @@ namespace GrpcGreeter {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Name.Length != 0) {
+      if (FirstName.Length != 0) {
         output.WriteRawTag(10);
-        output.WriteString(Name);
+        output.WriteString(FirstName);
+      }
+      if (LastName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(LastName);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -160,8 +180,11 @@ namespace GrpcGreeter {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Name.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
+      if (FirstName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FirstName);
+      }
+      if (LastName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LastName);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -170,12 +193,15 @@ namespace GrpcGreeter {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(HelloRequest other) {
+    public void MergeFrom(Greeting other) {
       if (other == null) {
         return;
       }
-      if (other.Name.Length != 0) {
-        Name = other.Name;
+      if (other.FirstName.Length != 0) {
+        FirstName = other.FirstName;
+      }
+      if (other.LastName.Length != 0) {
+        LastName = other.LastName;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -192,7 +218,11 @@ namespace GrpcGreeter {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Name = input.ReadString();
+            FirstName = input.ReadString();
+            break;
+          }
+          case 18: {
+            LastName = input.ReadString();
             break;
           }
         }
@@ -210,7 +240,11 @@ namespace GrpcGreeter {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Name = input.ReadString();
+            FirstName = input.ReadString();
+            break;
+          }
+          case 18: {
+            LastName = input.ReadString();
             break;
           }
         }
@@ -220,18 +254,15 @@ namespace GrpcGreeter {
 
   }
 
-  /// <summary>
-  /// The response message containing the greetings.
-  /// </summary>
-  public sealed partial class HelloReply : pb::IMessage<HelloReply>
+  public sealed partial class GreetRequest : pb::IMessage<GreetRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<HelloReply> _parser = new pb::MessageParser<HelloReply>(() => new HelloReply());
+    private static readonly pb::MessageParser<GreetRequest> _parser = new pb::MessageParser<GreetRequest>(() => new GreetRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<HelloReply> Parser { get { return _parser; } }
+    public static pb::MessageParser<GreetRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -244,55 +275,55 @@ namespace GrpcGreeter {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReply() {
+    public GreetRequest() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReply(HelloReply other) : this() {
-      message_ = other.message_;
+    public GreetRequest(GreetRequest other) : this() {
+      greeting_ = other.greeting_ != null ? other.greeting_.Clone() : null;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReply Clone() {
-      return new HelloReply(this);
+    public GreetRequest Clone() {
+      return new GreetRequest(this);
     }
 
-    /// <summary>Field number for the "message" field.</summary>
-    public const int MessageFieldNumber = 1;
-    private string message_ = "";
+    /// <summary>Field number for the "greeting" field.</summary>
+    public const int GreetingFieldNumber = 1;
+    private global::GrpcGreeter.Greeting greeting_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public string Message {
-      get { return message_; }
+    public global::GrpcGreeter.Greeting Greeting {
+      get { return greeting_; }
       set {
-        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        greeting_ = value;
       }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as HelloReply);
+      return Equals(other as GreetRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(HelloReply other) {
+    public bool Equals(GreetRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
       if (ReferenceEquals(other, this)) {
         return true;
       }
-      if (Message != other.Message) return false;
+      if (!object.Equals(Greeting, other.Greeting)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override int GetHashCode() {
       int hash = 1;
-      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (greeting_ != null) hash ^= Greeting.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -309,9 +340,9 @@ namespace GrpcGreeter {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (Message.Length != 0) {
+      if (greeting_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Message);
+        output.WriteMessage(Greeting);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -322,9 +353,9 @@ namespace GrpcGreeter {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (Message.Length != 0) {
+      if (greeting_ != null) {
         output.WriteRawTag(10);
-        output.WriteString(Message);
+        output.WriteMessage(Greeting);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -335,8 +366,8 @@ namespace GrpcGreeter {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public int CalculateSize() {
       int size = 0;
-      if (Message.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      if (greeting_ != null) {
+        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Greeting);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -345,12 +376,15 @@ namespace GrpcGreeter {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(HelloReply other) {
+    public void MergeFrom(GreetRequest other) {
       if (other == null) {
         return;
       }
-      if (other.Message.Length != 0) {
-        Message = other.Message;
+      if (other.greeting_ != null) {
+        if (greeting_ == null) {
+          Greeting = new global::GrpcGreeter.Greeting();
+        }
+        Greeting.MergeFrom(other.Greeting);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -367,7 +401,10 @@ namespace GrpcGreeter {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
             break;
           case 10: {
-            Message = input.ReadString();
+            if (greeting_ == null) {
+              Greeting = new global::GrpcGreeter.Greeting();
+            }
+            input.ReadMessage(Greeting);
             break;
           }
         }
@@ -385,7 +422,10 @@ namespace GrpcGreeter {
             _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
             break;
           case 10: {
-            Message = input.ReadString();
+            if (greeting_ == null) {
+              Greeting = new global::GrpcGreeter.Greeting();
+            }
+            input.ReadMessage(Greeting);
             break;
           }
         }
@@ -395,15 +435,15 @@ namespace GrpcGreeter {
 
   }
 
-  public sealed partial class HelloReplyStream : pb::IMessage<HelloReplyStream>
+  public sealed partial class GreetResponse : pb::IMessage<GreetResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<HelloReplyStream> _parser = new pb::MessageParser<HelloReplyStream>(() => new HelloReplyStream());
+    private static readonly pb::MessageParser<GreetResponse> _parser = new pb::MessageParser<GreetResponse>(() => new GreetResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public static pb::MessageParser<HelloReplyStream> Parser { get { return _parser; } }
+    public static pb::MessageParser<GreetResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public static pbr::MessageDescriptor Descriptor {
@@ -416,22 +456,329 @@ namespace GrpcGreeter {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReplyStream() {
+    public GreetResponse() {
       OnConstruction();
     }
 
     partial void OnConstruction();
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReplyStream(HelloReplyStream other) : this() {
-      message_ = other.message_;
-      timestamp_ = other.timestamp_ != null ? other.timestamp_.Clone() : null;
+    public GreetResponse(GreetResponse other) : this() {
+      result_ = other.result_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public HelloReplyStream Clone() {
-      return new HelloReplyStream(this);
+    public GreetResponse Clone() {
+      return new GreetResponse(this);
+    }
+
+    /// <summary>Field number for the "result" field.</summary>
+    public const int ResultFieldNumber = 1;
+    private string result_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public string Result {
+      get { return result_; }
+      set {
+        result_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as GreetResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(GreetResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Result != other.Result) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Result.Length != 0) hash ^= Result.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Result.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Result);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Result.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Result);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (Result.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Result);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(GreetResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Result.Length != 0) {
+        Result = other.Result;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            Result = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            Result = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class Empty : pb::IMessage<Empty>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<Empty> _parser = new pb::MessageParser<Empty>(() => new Empty());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<Empty> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcGreeter.GreetReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Empty() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Empty(Empty other) : this() {
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public Empty Clone() {
+      return new Empty(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override bool Equals(object other) {
+      return Equals(other as Empty);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public bool Equals(Empty other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public int CalculateSize() {
+      int size = 0;
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(Empty other) {
+      if (other == null) {
+        return;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+        }
+      }
+    }
+    #endif
+
+  }
+
+  public sealed partial class GreetResponseStream : pb::IMessage<GreetResponseStream>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<GreetResponseStream> _parser = new pb::MessageParser<GreetResponseStream>(() => new GreetResponseStream());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pb::MessageParser<GreetResponseStream> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::GrpcGreeter.GreetReflection.Descriptor.MessageTypes[4]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GreetResponseStream() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GreetResponseStream(GreetResponseStream other) : this() {
+      message_ = other.message_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    public GreetResponseStream Clone() {
+      return new GreetResponseStream(this);
     }
 
     /// <summary>Field number for the "message" field.</summary>
@@ -445,24 +792,13 @@ namespace GrpcGreeter {
       }
     }
 
-    /// <summary>Field number for the "timestamp" field.</summary>
-    public const int TimestampFieldNumber = 2;
-    private global::Google.Protobuf.WellKnownTypes.Timestamp timestamp_;
-    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public global::Google.Protobuf.WellKnownTypes.Timestamp Timestamp {
-      get { return timestamp_; }
-      set {
-        timestamp_ = value;
-      }
-    }
-
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     public override bool Equals(object other) {
-      return Equals(other as HelloReplyStream);
+      return Equals(other as GreetResponseStream);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public bool Equals(HelloReplyStream other) {
+    public bool Equals(GreetResponseStream other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -470,7 +806,6 @@ namespace GrpcGreeter {
         return true;
       }
       if (Message != other.Message) return false;
-      if (!object.Equals(Timestamp, other.Timestamp)) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -478,7 +813,6 @@ namespace GrpcGreeter {
     public override int GetHashCode() {
       int hash = 1;
       if (Message.Length != 0) hash ^= Message.GetHashCode();
-      if (timestamp_ != null) hash ^= Timestamp.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -499,10 +833,6 @@ namespace GrpcGreeter {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
-      if (timestamp_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Timestamp);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -516,10 +846,6 @@ namespace GrpcGreeter {
         output.WriteRawTag(10);
         output.WriteString(Message);
       }
-      if (timestamp_ != null) {
-        output.WriteRawTag(18);
-        output.WriteMessage(Timestamp);
-      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -532,9 +858,6 @@ namespace GrpcGreeter {
       if (Message.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
       }
-      if (timestamp_ != null) {
-        size += 1 + pb::CodedOutputStream.ComputeMessageSize(Timestamp);
-      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -542,18 +865,12 @@ namespace GrpcGreeter {
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
-    public void MergeFrom(HelloReplyStream other) {
+    public void MergeFrom(GreetResponseStream other) {
       if (other == null) {
         return;
       }
       if (other.Message.Length != 0) {
         Message = other.Message;
-      }
-      if (other.timestamp_ != null) {
-        if (timestamp_ == null) {
-          Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-        }
-        Timestamp.MergeFrom(other.Timestamp);
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -573,13 +890,6 @@ namespace GrpcGreeter {
             Message = input.ReadString();
             break;
           }
-          case 18: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Timestamp);
-            break;
-          }
         }
       }
     #endif
@@ -596,13 +906,6 @@ namespace GrpcGreeter {
             break;
           case 10: {
             Message = input.ReadString();
-            break;
-          }
-          case 18: {
-            if (timestamp_ == null) {
-              Timestamp = new global::Google.Protobuf.WellKnownTypes.Timestamp();
-            }
-            input.ReadMessage(Timestamp);
             break;
           }
         }

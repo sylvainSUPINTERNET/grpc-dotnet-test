@@ -8,9 +8,6 @@
 using grpc = global::Grpc.Core;
 
 namespace GrpcGreeter {
-  /// <summary>
-  /// The greeting service definition.
-  /// </summary>
   public static partial class Greeter
   {
     static readonly string __ServiceName = "greet.Greeter";
@@ -49,29 +46,29 @@ namespace GrpcGreeter {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcGreeter.HelloRequest> __Marshaller_greet_HelloRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcGreeter.HelloRequest.Parser));
+    static readonly grpc::Marshaller<global::GrpcGreeter.GreetRequest> __Marshaller_greet_GreetRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcGreeter.GreetRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcGreeter.HelloReply> __Marshaller_greet_HelloReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcGreeter.HelloReply.Parser));
+    static readonly grpc::Marshaller<global::GrpcGreeter.GreetResponse> __Marshaller_greet_GreetResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcGreeter.GreetResponse.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Google.Protobuf.WellKnownTypes.Empty> __Marshaller_google_protobuf_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Google.Protobuf.WellKnownTypes.Empty.Parser));
+    static readonly grpc::Marshaller<global::GrpcGreeter.Empty> __Marshaller_greet_Empty = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcGreeter.Empty.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::GrpcGreeter.HelloReplyStream> __Marshaller_greet_HelloReplyStream = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcGreeter.HelloReplyStream.Parser));
+    static readonly grpc::Marshaller<global::GrpcGreeter.GreetResponseStream> __Marshaller_greet_GreetResponseStream = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::GrpcGreeter.GreetResponseStream.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::GrpcGreeter.HelloRequest, global::GrpcGreeter.HelloReply> __Method_SayHello = new grpc::Method<global::GrpcGreeter.HelloRequest, global::GrpcGreeter.HelloReply>(
+    static readonly grpc::Method<global::GrpcGreeter.GreetRequest, global::GrpcGreeter.GreetResponse> __Method_Greet = new grpc::Method<global::GrpcGreeter.GreetRequest, global::GrpcGreeter.GreetResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
-        "SayHello",
-        __Marshaller_greet_HelloRequest,
-        __Marshaller_greet_HelloReply);
+        "Greet",
+        __Marshaller_greet_GreetRequest,
+        __Marshaller_greet_GreetResponse);
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::GrpcGreeter.HelloReplyStream> __Method_SayHelloStream = new grpc::Method<global::Google.Protobuf.WellKnownTypes.Empty, global::GrpcGreeter.HelloReplyStream>(
+    static readonly grpc::Method<global::GrpcGreeter.Empty, global::GrpcGreeter.GreetResponseStream> __Method_GreetStream = new grpc::Method<global::GrpcGreeter.Empty, global::GrpcGreeter.GreetResponseStream>(
         grpc::MethodType.ServerStreaming,
         __ServiceName,
-        "SayHelloStream",
-        __Marshaller_google_protobuf_Empty,
-        __Marshaller_greet_HelloReplyStream);
+        "GreetStream",
+        __Marshaller_greet_Empty,
+        __Marshaller_greet_GreetResponseStream);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -83,20 +80,14 @@ namespace GrpcGreeter {
     [grpc::BindServiceMethod(typeof(Greeter), "BindService")]
     public abstract partial class GreeterBase
     {
-      /// <summary>
-      /// Sends a greeting
-      /// </summary>
-      /// <param name="request">The request received from the client.</param>
-      /// <param name="context">The context of the server-side call handler being invoked.</param>
-      /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::GrpcGreeter.HelloReply> SayHello(global::GrpcGreeter.HelloRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::GrpcGreeter.GreetResponse> Greet(global::GrpcGreeter.GreetRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task SayHelloStream(global::Google.Protobuf.WellKnownTypes.Empty request, grpc::IServerStreamWriter<global::GrpcGreeter.HelloReplyStream> responseStream, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task GreetStream(global::GrpcGreeter.Empty request, grpc::IServerStreamWriter<global::GrpcGreeter.GreetResponseStream> responseStream, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -109,8 +100,8 @@ namespace GrpcGreeter {
     public static grpc::ServerServiceDefinition BindService(GreeterBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_SayHello, serviceImpl.SayHello)
-          .AddMethod(__Method_SayHelloStream, serviceImpl.SayHelloStream).Build();
+          .AddMethod(__Method_Greet, serviceImpl.Greet)
+          .AddMethod(__Method_GreetStream, serviceImpl.GreetStream).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the  service binding logic.
@@ -120,8 +111,8 @@ namespace GrpcGreeter {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, GreeterBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_SayHello, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcGreeter.HelloRequest, global::GrpcGreeter.HelloReply>(serviceImpl.SayHello));
-      serviceBinder.AddMethod(__Method_SayHelloStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::Google.Protobuf.WellKnownTypes.Empty, global::GrpcGreeter.HelloReplyStream>(serviceImpl.SayHelloStream));
+      serviceBinder.AddMethod(__Method_Greet, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::GrpcGreeter.GreetRequest, global::GrpcGreeter.GreetResponse>(serviceImpl.Greet));
+      serviceBinder.AddMethod(__Method_GreetStream, serviceImpl == null ? null : new grpc::ServerStreamingServerMethod<global::GrpcGreeter.Empty, global::GrpcGreeter.GreetResponseStream>(serviceImpl.GreetStream));
     }
 
   }
