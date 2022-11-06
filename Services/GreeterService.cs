@@ -11,32 +11,36 @@ public class GreeterService : Greeter.GreeterBase
     {
         _logger = logger;
     }
+    
 
-    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+    public override Task<GreetResponse> Greet(GreetRequest request, ServerCallContext context)
     {
-        return Task.FromResult(new HelloReply
+        _logger.LogInformation("Greet method called");
+
+        return Task.FromResult(new GreetResponse
         {
-            Message = "Hello " + request.Name
+            Result = "Hello " + request.Greeting.FirstName
         });
     }
 
-    public override async Task SayHelloStream(Empty _, IServerStreamWriter<HelloReplyStream> responseStream, ServerCallContext context)
-    {
 
-        await responseStream.WriteAsync(new HelloReplyStream
-        {
-            Message = "Hello from stream1",
-            Timestamp = Timestamp.FromDateTime(DateTime.UtcNow)
-        });
+    // public override async Task SayHelloStream(Empty _, IServerStreamWriter<HelloReplyStream> responseStream, ServerCallContext context)
+    // {
 
-        await Task.Delay(6000);
+    //     await responseStream.WriteAsync(new HelloReplyStream
+    //     {
+    //         Message = "Hello from stream1",
+    //         Timestamp = Timestamp.FromDateTime(DateTime.UtcNow)
+    //     });
 
-        await responseStream.WriteAsync(new HelloReplyStream
-        {
-            Message = "Hello from stream2",
-            Timestamp = Timestamp.FromDateTime(DateTime.UtcNow)
-        });
+    //     await Task.Delay(6000);
 
-        return;
-    }
+    //     await responseStream.WriteAsync(new HelloReplyStream
+    //     {
+    //         Message = "Hello from stream2",
+    //         Timestamp = Timestamp.FromDateTime(DateTime.UtcNow)
+    //     });
+
+    //     return;
+    // }
 }
