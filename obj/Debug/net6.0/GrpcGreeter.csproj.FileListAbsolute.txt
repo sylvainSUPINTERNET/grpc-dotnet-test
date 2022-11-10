@@ -56,3 +56,12 @@ E:\Workspace\grpc-dotnet-test\obj\Debug\net6.0\refint\GrpcGreeter.dll
 E:\Workspace\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.pdb
 E:\Workspace\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.genruntimeconfig.cache
 E:\Workspace\grpc-dotnet-test\obj\Debug\net6.0\ref\GrpcGreeter.dll
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.csproj.AssemblyReference.cache
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.AssemblyInfoInputs.cache
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.AssemblyInfo.cs
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.csproj.CoreCompileInputs.cache
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.MvcApplicationPartsAssemblyInfo.cache
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.dll
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\refint\GrpcGreeter.dll
+C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.pdb

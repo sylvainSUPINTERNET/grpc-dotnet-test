@@ -1,4 +1,5 @@
 using GrpcGreeter.Services;
+using GrpcHistory.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 // 50051 is the port where envoy redirect response from grpc cliet
 app.MapGrpcService<GreeterService>();
+app.MapGrpcService<HistoryService>();
 
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 

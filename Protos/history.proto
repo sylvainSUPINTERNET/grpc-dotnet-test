@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcHistory";
+
+package history;
+
+message Empty {}
+
+
+message HistoryEvent {
+    string winnerNickname = 1;
+    string itemPrice = 2; // to mainpulate price, make sure you convert / using DECIMAL type !
+    int32 winAt = 3; // timestamp
+    string itemUrl = 4;
+}
+
+
+message HistoryWinEventResponseStream {
+   repeated HistoryEvent historyEventList = 1;
+}
+
+
+
+service HistorySvc {
+    rpc HistoryWinStream (Empty) returns (stream HistoryWinEventResponseStream);
+}
