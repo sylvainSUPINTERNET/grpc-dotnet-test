@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace-perso\\grpc-dotnet-test\\GrpcGreeter.csproj": {}
+    "E:\\Workspace\\grpc-dotnet-test\\GrpcGreeter.csproj": {}
   },
   "projects": {
-    "C:\\Workspace-perso\\grpc-dotnet-test\\GrpcGreeter.csproj": {
+    "E:\\Workspace\\grpc-dotnet-test\\GrpcGreeter.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace-perso\\grpc-dotnet-test\\GrpcGreeter.csproj",
+        "projectUniqueName": "E:\\Workspace\\grpc-dotnet-test\\GrpcGreeter.csproj",
         "projectName": "GrpcGreeter",
-        "projectPath": "C:\\Workspace-perso\\grpc-dotnet-test\\GrpcGreeter.csproj",
-        "packagesPath": "C:\\Users\\syjoly\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace-perso\\grpc-dotnet-test\\obj\\",
+        "projectPath": "E:\\Workspace\\grpc-dotnet-test\\GrpcGreeter.csproj",
+        "packagesPath": "C:\\Users\\Sylvain\\.nuget\\packages\\",
+        "outputPath": "E:\\Workspace\\grpc-dotnet-test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\syjoly\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Sylvain\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -49,8 +49,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -62,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }
