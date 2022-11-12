@@ -8,8 +8,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+builder.Services.AddGrpcReflection(); // Add this line for postman / testing (auto discovery grpc service)
 
 var app = builder.Build();
+
+
+IWebHostEnvironment env = app.Environment;
+if (env.IsDevelopment())
+{
+    app.MapGrpcReflectionService();
+}
 
 // Configure the HTTP request pipeline.
 // 50051 is the port where envoy redirect response from grpc cliet

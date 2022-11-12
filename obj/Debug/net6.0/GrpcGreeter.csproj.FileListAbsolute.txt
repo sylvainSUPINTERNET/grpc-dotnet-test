@@ -65,3 +65,5 @@ C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.MvcApplicationP
 C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.dll
 C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\refint\GrpcGreeter.dll
 C:\Workspace-perso\grpc-dotnet-test\obj\Debug\net6.0\GrpcGreeter.pdb
+E:\Workspace\grpc-dotnet-test\bin\Debug\net6.0\Grpc.AspNetCore.Server.Reflection.dll
+E:\Workspace\grpc-dotnet-test\bin\Debug\net6.0\Grpc.Reflection.dll
