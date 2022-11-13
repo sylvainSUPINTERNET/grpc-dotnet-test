@@ -17,3 +17,12 @@ When the Envoy server is running, it will proxy every response from the port 808
 dotnet run 
 
 ````
+
+
+# RABBITMQ
+
+````bash 
+
+docker run -d --hostname my-rabbitmq-server --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+
+````

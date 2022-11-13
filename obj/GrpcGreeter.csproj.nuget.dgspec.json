@@ -48,6 +48,10 @@
             "Grpc.AspNetCore.Server.Reflection": {
               "target": "Package",
               "version": "[2.49.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.4.0, )"
             }
           },
           "imports": [

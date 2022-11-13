@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "EldoLLIs1R+NklVfTRwD9sqNgXuK/4pP/rIzrYhaRItgrROJBD/oL0SmiBI+GQ+OiAnqCirwbkuld9qzCYOkUA==",
+  "dgSpecHash": "tPqrO51FGoNAwLHvm9w4BqCSUbNW9TKzTujPjnxejMzv4uZ2pwSnCKsmmT7NT9lu7Lm6IXCTeLiu9U5yNHTQ8A==",
   "success": true,
   "projectFilePath": "/Users/sylvainjoly/Workspace/grpc-dotnet-test/GrpcGreeter.csproj",
   "expectedPackageFiles": [
@@ -25,7 +25,9 @@
     "/Users/sylvainjoly/.nuget/packages/microsoft.extensions.logging.abstractions/3.0.3/microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
     "/Users/sylvainjoly/.nuget/packages/microsoft.extensions.options/3.0.3/microsoft.extensions.options.3.0.3.nupkg.sha512",
     "/Users/sylvainjoly/.nuget/packages/microsoft.extensions.primitives/3.0.3/microsoft.extensions.primitives.3.0.3.nupkg.sha512",
-    "/Users/sylvainjoly/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+    "/Users/sylvainjoly/.nuget/packages/rabbitmq.client/6.4.0/rabbitmq.client.6.4.0.nupkg.sha512",
+    "/Users/sylvainjoly/.nuget/packages/system.memory/4.5.4/system.memory.4.5.4.nupkg.sha512",
+    "/Users/sylvainjoly/.nuget/packages/system.threading.channels/4.7.1/system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

@@ -98,3 +98,4 @@ E:/Workspace/grpc-dotnet-test/bin/Debug/net6.0/Grpc.Reflection.dll
 /Users/sylvainjoly/Workspace/grpc-dotnet-test/obj/Debug/net6.0/GrpcGreeter.pdb
 /Users/sylvainjoly/Workspace/grpc-dotnet-test/obj/Debug/net6.0/GrpcGreeter.genruntimeconfig.cache
 /Users/sylvainjoly/Workspace/grpc-dotnet-test/obj/Debug/net6.0/ref/GrpcGreeter.dll
+/Users/sylvainjoly/Workspace/grpc-dotnet-test/bin/Debug/net6.0/RabbitMQ.Client.dll
