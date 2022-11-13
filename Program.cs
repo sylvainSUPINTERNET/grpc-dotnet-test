@@ -1,5 +1,7 @@
+using System.Runtime.InteropServices;
 using GrpcGreeter.Services;
 using GrpcHistory.Services;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,13 +12,30 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc();
 builder.Services.AddGrpcReflection(); // Add this line for postman / testing (auto discovery grpc service)
 
+
+
+
+if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX)) 
+{
+    builder.WebHost.ConfigureKestrel(options =>
+    {
+        // Setup a HTTP/2 endpoint without TLS. ( macos )
+        options.ListenLocalhost(50051, o => o.Protocols =
+            HttpProtocols.Http2);
+    });
+}
+
+
 var app = builder.Build();
+
+
 
 
 IWebHostEnvironment env = app.Environment;
 if (env.IsDevelopment())
 {
     app.MapGrpcReflectionService();
+    
 }
 
 // Configure the HTTP request pipeline.
