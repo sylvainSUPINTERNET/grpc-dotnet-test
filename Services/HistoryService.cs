@@ -15,7 +15,8 @@ namespace GrpcHistory.Services
 
         public override async Task HistoryWinStream(Empty _, IServerStreamWriter<HistoryWinEventResponseStream> responseStream, ServerCallContext context)
         {
-
+            //https://github.com/cactuaroid/GrpcWpfSample/blob/cd0d87ed6ccccac787960e9742aee036a3dc11eb/GrpcWpfSample.Server/Grpc/ChatServiceGrpcServer.cs#L51
+// https://stackoverflow.com/questions/60116274/grpc-c-sharp-server-side-waiting-until-client-closes-connection
             try {
                 var data = new List<HistoryEvent> {
                     new HistoryEvent {
