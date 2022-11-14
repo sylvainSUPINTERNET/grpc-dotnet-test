@@ -4,6 +4,8 @@ using Grpc.Core;
 using GrpcHistory;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Singleton;
+using Newtonsoft.Json;
 
 
 namespace BackgroundService 
@@ -19,8 +21,11 @@ namespace BackgroundService
 
         private readonly ILogger<BackgroundtTasksService> _logger;
 
-        public BackgroundtTasksService(ILogger<BackgroundtTasksService> logger) 
+        private readonly ISharedQueue _sharedQueue;
+
+        public BackgroundtTasksService(ILogger<BackgroundtTasksService> logger, ISharedQueue sharedQueue)
         {
+            _sharedQueue = sharedQueue;
             _logger = logger;
             _cfRabbitMq = new ConnectionFactory { HostName = "localhost", UserName = "guest", Password = "guest", Port = 5672 };
             _rabbitMqConnection = _cfRabbitMq.CreateConnection();
@@ -49,7 +54,18 @@ namespace BackgroundService
             consumer.Received += async (model, ea) =>
             {
                 var body = ea.Body.ToArray();
-                Console.WriteLine(body);
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    MissingMemberHandling = MissingMemberHandling.Ignore
+                };
+
+                HistoryEvent receivedMessage = JsonConvert.DeserializeObject<HistoryEvent>(Encoding.UTF8.GetString(body), settings)!;
+                Console.WriteLine(receivedMessage);
+                
+                for ( int i = 0; i < _sharedQueue.GetQueueList().Count; i++ ) {
+                    _sharedQueue.Enqueue(_sharedQueue.GetQueueList().Keys.ElementAt(i), receivedMessage);
+                }
             };
 
             channel.CallbackException += (chann, args) =>
