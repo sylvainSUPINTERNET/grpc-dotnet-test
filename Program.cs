@@ -1,7 +1,9 @@
 using System.Runtime.InteropServices;
+using BackgroundService;
 using GrpcGreeter.Services;
 using GrpcHistory.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Singleton;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddGrpc();
 builder.Services.AddGrpcReflection(); // Add this line for postman / testing (auto discovery grpc service)
+builder.Services.AddSingleton<ISharedQueue, SharedQueue>();
 
+builder.Services.AddHostedService<BackgroundtTasksService>();
 
 
 

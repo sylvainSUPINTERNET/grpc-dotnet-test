@@ -1,0 +1,7 @@
+namespace Singleton 
+
+{
+    interface ISharedQueue {
+
+    }
+}
