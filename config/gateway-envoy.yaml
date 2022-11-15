@@ -16,6 +16,7 @@ static_resources:
               config:
                 codec_type: auto
                 stat_prefix: ingress_http
+                stream_idle_timeout: 0s # support long live streaming
                 route_config:
                   name: local_route
                   virtual_hosts:
@@ -27,6 +28,7 @@ static_resources:
                             prefix: '/'
                           route:
                             cluster: gateway
+                            max_grpc_timeout: 0s # Add this line for long live streaming else you will facing for long streaming : net::ERR_INCOMPLETE_CHUNKED_ENCODING (200)
                       cors:
                         allow_origin_string_match:
                           - prefix: '*'

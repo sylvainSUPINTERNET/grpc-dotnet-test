@@ -38,6 +38,10 @@ namespace GrpcHistory.Services
             }
 
             Console.WriteLine("Cancel");
+            // Make sure we cleanup memory
+            if ( _shareQueue.GetQueue(id).Count > 0 ) {
+                _shareQueue.GetQueue(id).Clear();
+            }
 
         }
     }
